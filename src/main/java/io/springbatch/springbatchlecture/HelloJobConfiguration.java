@@ -35,7 +35,7 @@ public class HelloJobConfiguration {
                     @Override
                     public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext) throws Exception {
                         System.out.println(" ========================");
-                        System.out.println(" ### Hello Spring Batch -- helloStep1 !!");
+                        System.out.println(" ### Hello Spring Batch -- helloStep1!");
                         System.out.println(" ========================");
                         return RepeatStatus.FINISHED;   // 해당 기능 한번 수행하고 종료
                     }
@@ -50,7 +50,7 @@ public class HelloJobConfiguration {
                     @Override
                     public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext) throws Exception {
                         System.out.println(" ========================");
-                        System.out.println(" ### Hello Spring Batch -- helloStep2 !!");
+                        System.out.println(" ### Hello Spring Batch -- helloStep2!");
                         System.out.println(" ========================");
                         return RepeatStatus.FINISHED;   // 해당 기능 한번 수행하고 종료
                     }
