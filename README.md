@@ -9,5 +9,6 @@
       + HelloJobConfiguration 구현
       + DB 스키마 생성 및 이해(DBJobConfiguration 구현)
   + 스프링 배치 도메인 이해
-    + ch04. JOB
+    + Ch04. JOB
       + JobConfiguration 구현
+    + Ch05. JobInstance
