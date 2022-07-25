@@ -13,3 +13,6 @@
       + JobConfiguration 구현
     + Ch05. JobInstance
       + JobRunner 구현
+    + Ch06. JobParameter
+      + JobRunner, JobConfiguration 수정 
+
