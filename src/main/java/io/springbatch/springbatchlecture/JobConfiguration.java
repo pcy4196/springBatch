@@ -36,16 +36,18 @@ public class JobConfiguration {
                 .tasklet(new Tasklet() {
                     @Override
                     public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
-                        // contribution 을 이용하여 parameter 호출
-                        JobParameters jobParameters1 = contribution.getStepExecution().getJobExecution().getJobParameters();
-                        System.out.println("name  : " + jobParameters1.getString("name"));
-                        System.out.println("seq : " + jobParameters1.getLong("seq"));
-                        System.out.println("date : " + jobParameters1.getDate("date"));
-                        System.out.println("age : " + jobParameters1.getDouble("age"));
+//                        // 2022.07.25 JobParameter
+//                        // contribution 을 이용하여 parameter 호출
+//                        JobParameters jobParameters1 = contribution.getStepExecution().getJobExecution().getJobParameters();
+//                        System.out.println("name  : " + jobParameters1.getString("name"));
+//                        System.out.println("seq : " + jobParameters1.getLong("seq"));
+//                        System.out.println("date : " + jobParameters1.getDate("date"));
+//                        System.out.println("age : " + jobParameters1.getDouble("age"));
+//
+//                        // chunkContext 을 이용하여 parameter 호출 - map 형태라 많이 사용 X
+//                        Map<String, Object> jobParameters2 = chunkContext.getStepContext().getJobParameters();
 
-                        // chunkContext 을 이용하여 parameter 호출 - map 형태라 많이 사용 X
-                        Map<String, Object> jobParameters2 = chunkContext.getStepContext().getJobParameters();
-
+                        // 2022.07.27 JobInstance
                         System.out.println("step1 was executed");
                         return RepeatStatus.FINISHED;
                     }
@@ -61,6 +63,7 @@ public class JobConfiguration {
                     @Override
                     public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
                         System.out.println("step2 was executed");
+//                        throw new RuntimeException();
                         return RepeatStatus.FINISHED;
                     }
                 })

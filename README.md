@@ -15,4 +15,5 @@
       + JobRunner 구현
     + Ch06. JobParameter
       + JobRunner, JobConfiguration 수정 
-
+    + Ch07. JobExecution
+      + JobConfiguration 수정
