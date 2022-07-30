@@ -32,4 +32,4 @@ spring:
     jdbc:
       initialize-schema: ALWAYS
     job:
-      enabled: false
+      enabled: true

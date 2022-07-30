@@ -17,3 +17,5 @@
       + JobRunner, JobConfiguration 수정 
     + Ch07. JobExecution
       + JobConfiguration 수정
+    + Ch08. Step
+      + StepConfiguration, CustomTasklet 구현
