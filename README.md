@@ -23,3 +23,6 @@
       + StepExecutionConfiguration 구현
     + Ch10. StepContribution
       + StepContributionConfiguration 구현
+    + Ch11. ExecutionContext
+    + Ch12. JobRepository
+      + JobRepositoryConfiguration, JobRepositoryListener 구현

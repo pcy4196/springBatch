@@ -2,6 +2,7 @@ package io.springbatch.springbatchlecture;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.batch.core.Job;
+import org.springframework.batch.core.JobExecutionListener;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.StepContribution;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
@@ -14,39 +15,41 @@ import org.springframework.context.annotation.Configuration;
 
 @RequiredArgsConstructor
 @Configuration
-public class StepContributionConfiguration {
+public class JobRepositoryConfiguration {
 
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
+    private final JobExecutionListener jobExecutionListener;
 
     @Bean
-    public Job stepContributionJob() {
-        return jobBuilderFactory.get("stepContributionJob")
-                .start(stepContributionJobStep1())
-                .next(sstepContributionJobStep2())
+    public Job jobRepositoryJob() {
+        return jobBuilderFactory.get("jobRepositoryJob")
+                .start(jobRepositoryStep1())
+                .next(jobRepositoryStep2())
+                .listener(jobExecutionListener)
                 .build();
     }
+
     @Bean
-    public Step stepContributionJobStep1() {
-        return stepBuilderFactory.get("stepContributionJobStep1")
+    public Step jobRepositoryStep1() {
+        return stepBuilderFactory.get("jobRepositoryStep1")
                 .tasklet(new Tasklet() {
                     @Override
                     public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
-                        System.out.println("stepContributionJobStep1 has executed");
+                        System.out.println("jobRepositoryStep1 has executed");
                         return RepeatStatus.FINISHED;
                     }
                 })
                 .build();
     }
 
-
     @Bean
-    public Step sstepContributionJobStep2() {
-        return stepBuilderFactory.get("stepContributionJobStep2")
+    public Step jobRepositoryStep2() {
+        return stepBuilderFactory.get("jobRepositoryStep2")
                 .tasklet(new Tasklet() {
                     @Override
                     public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
-                        System.out.println("stepContributionJobStep2 has executed");
+                        System.out.println("jobRepositoryStep2 has executed");
                         return RepeatStatus.FINISHED;
                     }
                 })
